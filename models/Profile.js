@@ -28,7 +28,7 @@ const ProfileSchema = new mongoose.Schema({
         type:String
     },
     contact:{
-        type:Number
+        type:String
     },
     social:{
         twitter:{
