@@ -51,10 +51,8 @@ router.post(
             about,
             website,
             location,
-            status,
-            delivery,
-            takeout,
             contact,
+            email,
             twitter,
             facebook,
             instagram
@@ -67,14 +65,12 @@ router.post(
         if(about) profileFields.about = about;
         if(website) profileFields.website = website;
         if(location) profileFields.location = location;
-        if(status) profileFields.status = status;
-        if(delivery) profileFields.delivery = delivery;
-        if(takeout) profileFields.takeout = takeout;
         if(contact) profileFields.contact = contact;
 
 
         //Build social object
         profileFields.social = {};
+        if (email) profileFields.social.email = email;
         if (twitter) profileFields.social.twitter = twitter;
         if (facebook) profileFields.social.facebook = facebook;
         if (instagram) profileFields.social.instagram = instagram;

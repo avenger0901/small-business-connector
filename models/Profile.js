@@ -17,20 +17,13 @@ const ProfileSchema = new mongoose.Schema({
     location:{
         type:String
     },
-    status:{
-        type:String,
-        required:true
-    },
-    delivery:{
-        type:String
-    },
-    takeout:{
-        type:String
-    },
     contact:{
         type:String
     },
     social:{
+        email:{
+            type: String
+        },
         twitter:{
             type:String
         },
