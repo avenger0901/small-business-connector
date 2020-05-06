@@ -35,7 +35,7 @@ router.post(
     '/',
     [auth,
         [
-            check('status', 'Status is required')
+            check('type', 'Type is required')
             .not()
             .isEmpty()
         ]
@@ -47,6 +47,7 @@ router.post(
         }
 
         const {
+            type,
             company,
             about,
             website,
@@ -61,6 +62,8 @@ router.post(
         //Build profile object
         const profileFields = {};
         profileFields.user = req.user.id;
+
+        if(type) profileFields.type = type;
         if(company) profileFields.company = company;
         if(about) profileFields.about = about;
         if(website) profileFields.website = website;
