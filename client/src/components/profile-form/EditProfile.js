@@ -1,10 +1,10 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createProfile } from '../../actions/profile';
+import { createProfile, getCurrentProfile} from '../../actions/profile';
 
-const CreateProfile = ({ createProfile, history}) => {
+const EditProfile = ({ profile:{profile, loading}, createProfile, getCurrentProfile, history}) => {
   const [formData, setFromData] = useState({
     type:'',
     company: '',
@@ -19,6 +19,23 @@ const CreateProfile = ({ createProfile, history}) => {
   });
 
   const [diaplaySocialInputs, toggleSocialInputs] = useState(false);
+
+  useEffect(() => {
+    getCurrentProfile();
+
+    setFromData({
+      company:loading || !profile.company ? '' : profile.company,
+      website:loading || !profile.website ? '' : profile.website,
+      about:loading || !profile.about ? '' : profile.about,
+      type:loading || !profile.type ? '' : profile.type,
+      location:loading || !profile.location ? '' : profile.location,
+      contact:loading || !profile.contact ? '' : profile.contact,
+      email:loading || !profile.social ? '' : profile.social.email,
+      facebook:loading || !profile.social ? '' : profile.social.facebook,
+      twitter:loading || !profile.social ? '' : profile.social.twitter,
+      instagram:loading || !profile.social ? '' : profile.social.instagram,
+    });
+  },[loading]);
 
 
   const {
@@ -38,7 +55,7 @@ const CreateProfile = ({ createProfile, history}) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, history, true);
   }
 
 
@@ -46,7 +63,7 @@ const CreateProfile = ({ createProfile, history}) => {
   return (
     <Fragment>
       <h1 className="large text-primary">
-        Create Your Business Profile
+        Edit Your Business Profile
       </h1>
       <p className="lead">
         <i className="fas fa-user"></i> 
@@ -133,10 +150,14 @@ const CreateProfile = ({ createProfile, history}) => {
   )
 }
 
-CreateProfile.propTypes = {
-  createProfile: PropTypes.func.isRequired
+EditProfile.propTypes = {
+  createProfile: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
+  profile:PropTypes.object.isRequired,
 };
 
+const mapStateToProps = state => ({
+  profile: state.profile
+});
 
-
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(EditProfile));

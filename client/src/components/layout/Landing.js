@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
         <div className="landing-inner">
           <h1 className="x-large">Small Business Connector</h1>
           <p className="lead">
-            Create a profile, share posts and get help from
+            Create a profile, share posts and ideas with
             other small business owners
           </p>
           <div className="buttons">
