@@ -94,6 +94,12 @@ const CreateProfile = ({ createProfile, history}) => {
             >Phone: (eg. 541-123-1234)</small>
         </div>
 
+        <div className="form-group">
+          <input type="email" placeholder="Email" name="email" value={email} onChange={e => onChange(e)} />
+          <small className="form-text"
+            >Email: (eg. yourname@gmail.com)</small>
+        </div>
+
         <div className="my-2">
           <button onClick={() => toggleSocialInputs(!diaplaySocialInputs)} type='button' className="btn btn-light">
             Add Social Networks
@@ -102,11 +108,6 @@ const CreateProfile = ({ createProfile, history}) => {
         </div>
 
         {diaplaySocialInputs && <Fragment>
-        <div className="form-group social-input">
-          <i className="fa fa-envelope fa-2x"></i>
-          <input type="text" placeholder="Email" name="email" value={email} onChange={e => onChange(e)}/>
-        </div>
-
         <div className="form-group social-input">
           <i className="fab fa-twitter fa-2x"></i>
           <input type="text" placeholder="Twitter URL" name="twitter" value={twitter} onChange={e => onChange(e)} />

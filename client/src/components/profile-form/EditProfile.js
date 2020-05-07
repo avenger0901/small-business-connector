@@ -30,12 +30,12 @@ const EditProfile = ({ profile:{profile, loading}, createProfile, getCurrentProf
       type:loading || !profile.type ? '' : profile.type,
       location:loading || !profile.location ? '' : profile.location,
       contact:loading || !profile.contact ? '' : profile.contact,
-      email:loading || !profile.social ? '' : profile.social.email,
+      email:loading || !profile.email ? '' : profile.email,
       facebook:loading || !profile.social ? '' : profile.social.facebook,
       twitter:loading || !profile.social ? '' : profile.social.twitter,
       instagram:loading || !profile.social ? '' : profile.social.instagram,
     });
-  },[loading]);
+  },[loading,getCurrentProfile]);
 
 
   const {

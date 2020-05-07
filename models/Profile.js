@@ -23,10 +23,10 @@ const ProfileSchema = new mongoose.Schema({
     contact:{
         type:String
     },
+    email:{
+        type:String
+    },
     social:{
-        email:{
-            type: String
-        },
         twitter:{
             type:String
         },

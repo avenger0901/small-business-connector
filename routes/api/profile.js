@@ -70,11 +70,12 @@ router.post(
         if(website) profileFields.website = website;
         if(location) profileFields.location = location;
         if(contact) profileFields.contact = contact;
+        if (email) profileFields.email = email;
 
 
         //Build social object
         profileFields.social = {};
-        if (email) profileFields.social.email = email;
+       
         if (twitter) profileFields.social.twitter = twitter;
         if (facebook) profileFields.social.facebook = facebook;
         if (instagram) profileFields.social.instagram = instagram;
