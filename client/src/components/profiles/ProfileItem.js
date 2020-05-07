@@ -18,7 +18,8 @@ const ProfileItem = ({ profile: {
         <h2>{type} {company 
         && <span> - {company}</span>}</h2>
         <p className="my-1">
-          {website && <span>Website: {website}</span>}
+          {website && <span>Website: {website}</span>
+          }
         </p>
         <p className="my-1">
           {location && <span>Location: {location}</span>}

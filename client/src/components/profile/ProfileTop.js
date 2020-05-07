@@ -35,6 +35,15 @@ const ProfileTop = ({ profile: {
     </p>
     <div className="icons my-1">
     
+      
+    {/* {
+      website && (
+        <a href={website} target="_blank" rel="noopener noreferrer">
+        <i className="fab fa-twitter fa-2x"></i>
+      </a>
+      )
+    } */}
+    
     {
       social && social.twitter && (
         <a href={social.twitter} target="_blank" rel="noopener noreferrer">
