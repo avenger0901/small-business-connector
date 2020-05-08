@@ -57,7 +57,7 @@ const CreateProfile = ({ createProfile, history}) => {
         <div className="form-group">
           <select name="type" value={type} onChange={e => onChange(e)}>
           <option>Select Business Type</option>
-            <option value="Resturant">Resturant</option>
+            <option value="Restaurants">Restaurants</option>
             <option value="Service">Service</option>
             <option value="Clothing Store">Clothing Store</option>
             <option value="Maket">Market</option>

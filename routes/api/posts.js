@@ -187,7 +187,7 @@ router.post('/comment/:id',
 );
 
 
-//@route  POST api/posts/comment/:id/:comment_id
+//@route  DELETE api/posts/comment/:id/:comment_id
 //@desc   Delete a comment by ID
 //@access Private
 
@@ -223,14 +223,6 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
     res.status(500).send('Server Error');
   }
 })
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

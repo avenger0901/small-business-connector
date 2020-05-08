@@ -9,7 +9,7 @@ import {
   CLEAR_PROFILE
 } from './types';
 
-//Get current users profile
+// Get current users profile
 export const getCurrentProfile = () => async dispatch => {
   try {
     const res = await axios.get('/api/profile/me');
