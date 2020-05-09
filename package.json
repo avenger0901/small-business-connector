@@ -7,8 +7,7 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -18,6 +17,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/avenger0901/small-business-connector-backend/issues"
+  },
+  "engines": {
+    "node": "12.16.3"
   },
   "homepage": "https://github.com/avenger0901/small-business-connector-backend#readme",
   "dependencies": {
