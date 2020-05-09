@@ -19,6 +19,9 @@
   "bugs": {
     "url": "https://github.com/avenger0901/small-business-connector-backend/issues"
   },
+  "engines": {
+    "node": "12.16.3"
+  },
   "homepage": "https://github.com/avenger0901/small-business-connector-backend#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
